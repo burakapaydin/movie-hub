@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@200;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: Poppins;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 130vh;
+}
+.wrapper {
+  font-size: 1.6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* header */
+
+.logo {
+  width: 250px;
+  height: 100px;
+  object-fit: cover;
+  position: relative;
+  left: -40px;
+  cursor: pointer;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+nav {
+  margin: 4rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+nav ul li a {
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+}
+nav ul li a:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.menu {
+  width: 80%;
+}
+.active:before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid white;
+  width: 35%;
+  bottom: -5px;
+}
+/* hero */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+.left-col {
+  width: 100%;
+}
+h1 {
+  font-size: 8rem;
+}
+.left-col p {
+  font-size: 1.4rem;
+  max-width: 70ch;
+}
+.left-col button {
+  border: none;
+  padding: 1rem 10rem;
+  margin-top: 5rem;
+  border-radius: 9999px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: transform .5s ease,
+  box-shadow .4s ease;
+}
+.right-col {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 4rem;
+}
+.card {
+  border-radius: 10px;
+  padding: 2rem;
+  width: 250px;
+  height: 300px;
+  font-size: 1.1rem;
+  transition: transform .5s ease;
+}
+.card1 {
+  background: url(/aquamen.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.card2 {
+  background: url(/inception.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.card3 {
+  background: url(/joker-2019.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.card4 {
+  background: url(/wolverine.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+/* animations */
+nav ul li a:hover:before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid white;
+  width: 35%;
+  bottom: -5px;
+}
+
+.left-col button:hover{
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(255,255,255,0.5);
+}
+.card:hover{
+  transform: translateY(-20px);
+}
+.overlay{
+  transform: scale(0);
+  animation: intro 1500ms forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes intro{
+  to{
+    transform: scale(1);
+  }
+}
+h1{
+  background: linear-gradient(to right, #FFF 20%, rgb(255, 208, 0) 40%, rgb(255, 187, 0) 60%, #FFF 80%);
+  background-size: 200% auto;
+  animation: text 1s infinite linear;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+@keyframes text{
+  50%{
+    background-position: 200% center;
+  }
+  
+}
+/* media quer */
+
+@media (max-width:768px)
+{
+  header{
+    flex-direction: column;
+  }
+  section{
+    flex-direction: column;
+    gap: 10rem;
+    text-align: center;
+    vertical-align: center;
+  }
+  .left-col p{
+    font-size: 1.2rem;
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+  .left-col button{
+    padding: 1rem 5rem;
+  }
+  .card{
+    width: 200px;
+    height: 250px;
+  }
+ 
+  .card:hover{
+    transform: translateY(-10px);
+  }
+ .right-col{
+  margin-bottom: 50px;
+  gap: 1.8rem;
+ }
+ .logo{
+  margin-left: 30px;
+ }
+ nav ul{
+  gap: 2rem;
+  justify-content: center;
+ }
+ h1{
+  font-size: 5rem;
+ }
+}
